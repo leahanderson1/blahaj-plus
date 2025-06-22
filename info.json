@@ -1,0 +1,9 @@
+{
+	"name": "blahaj-plus",
+	"version": "0.0.1",
+	"title": "Blahaj+",
+	"author": "Leah Anderson",
+	"factorio_version": "2.0",
+	"dependencies": ["base >= 2.0", "blahaj >= 0.3.0"],
+	"description": "This mod adds on to ading2210's blahaj mod by adding more types of sharks :3"
+}
