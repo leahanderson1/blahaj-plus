@@ -48,7 +48,7 @@ local essenceOfShork = {
     localised_description = "Dust made out of lost BLÅHAJs. Maybe you can use it to reconstruct one?"
 }
 pinkBlahaj.localised_name = "Pink BLÅHAJ"
-pinkBlahaj.icon = "__blahaj-plus__/graphics/pinkblahaj/blahaj_full.png"
+pinkBlahaj.icon = "__blahaj-plus__/graphics/pinkblahaj.png"
 pinkBlahaj.name = "pink-blahaj"
 pinkBlahaj.subgroup = "raw-resource"
 pinkBlahaj.capsule_action = {
@@ -86,7 +86,7 @@ local pinkRecipe = {
     name = "pink-blahaj",
     localised_name = "Pink BLÅHAJ",
     enabled = false,
-    energy_required = 10,
+    energy_required = 5,
     ingredients = {
         { type = "item", name = "raw-fish", amount = 25 }
     },
@@ -100,7 +100,8 @@ local transRecipe = {
 	enabled = false,
 	energy_required = 8,
 	ingredients = {
-		{ type = "item", name = "pink-blahaj", amount = 50 }
+		{ type = "item", name = "pink-blahaj", amount = 50 },
+		{ type = "item", name = "essence-of-blahaj", amount = 20 }
 	},
 	results = { { type = "item", name = "trans-blahaj", amount = 1 } } 
 }
@@ -129,16 +130,18 @@ local essenceRecipe = {
 local pinkBlahajTech = {
     type = "technology",
     localised_name = "Pink BLÅHAJ",
+    localised_description = "A cute BLÅHAJ. Right click to cuddle with it and gain some health.",
     name = "pink-blahaj",
     essential = false,
     icon_size = 512,
-    icon = "__blahaj-plus__/graphics/pinkblahaj/blahaj_full.png",
+    icon = "__blahaj-plus__/graphics/pinkblahaj.png",
     effects = { { type = "unlock-recipe", recipe = "pink-blahaj" } },
     research_trigger = { type = "mine-entity", entity = "fish" }
 }
 local transBlahajTech = {
 	type = "technology",
 	localised_name = "Trans BLÅHAJ",
+	localised_description = "The mythical trans flag BLÅHAJ. Right click to cuddle it and gain a significant portion of your health.",
 	name = "trans-blahaj",
 	essential = false,
 	icon = "__blahaj-plus__/graphics/transblahaj.png",
@@ -154,6 +157,7 @@ local transBlahajTech = {
 local essenceTech = {
     type = "technology",
     localised_name = "Essence of Shork",
+    localised_description = "Dust made out of lost BLÅHAJs. Maybe you can use it to reconstruct one?",
     name = "essence-of-blahaj",
     icon_size = 256,
     icon = "__blahaj-plus__/graphics/essenceofshork.png",
@@ -166,4 +170,22 @@ local essenceTech = {
         time = 30
     }
 }
-data:extend { pinkBlahaj, transBlahaj, essenceOfShork, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, pinkBlahajTech, transBlahajTech, essenceTech }
+local specialTech = {
+	type = "technology",
+	localised_name = "Special BLÅHAJs",
+	localised_description = "BLÅHAJs that have special effects tied to their usage.",
+	name = "special-blahaj",
+	icon = "__blahaj-plus__/graphics/specialblahaj.png",
+	icon_size = 512,
+	essential = false,
+	prerequisites = { "automation-2", "essence-of-blahaj", "pink-blahaj", "military-science-pack" },
+	effects = {
+
+	},
+	unit = {
+		count = 50,
+		ingredients = { { "automation-science-pack", 1 }, { "logistic-science-pack", 1 }, { "military-science-pack", 1 }},
+		time = 30
+	}
+}
+data:extend { pinkBlahaj, transBlahaj, essenceOfShork, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech }
