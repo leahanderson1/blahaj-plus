@@ -1,0 +1,17 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 24. 06. 2025
+  Major Features:
+    - Added the Special BLÅHAJ technology.
+    - Added the Fire BLÅHAJ.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 23. 06. 2025
+  Bugfixes:
+    - Fixed info.json to have the correct name as shown in the Factorio Mod
+    Portal.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 22. 06. 2025
+  Major Features:
+    - Initial release
