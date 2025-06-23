@@ -1,5 +1,7 @@
 local pinkBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
 local transBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
+local fireCapsule = table.deepcopy(data.raw["projectile"]["slowdown-capsule"])
+local fireBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
 transBlahaj.localised_name = "Trans BLÅHAJ"
 transBlahaj.icon = "__blahaj-plus__/graphics/transblahaj.png"
 transBlahaj.icon_size = 512
@@ -29,14 +31,13 @@ transBlahaj.capsule_action = {
                                 amount = -75,
                                 type = "physical"
                             }
+		    	}
                         }
                     }
                 }
             }
         }
     }
-}
-
 local essenceOfShork = {
     type = "item",
     stack_size = 100,
@@ -81,6 +82,79 @@ pinkBlahaj.capsule_action = {
         }
     }
 }
+fireCapsule.name = "fire-capsule"
+fireCapsule.action = {
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "instant",
+          target_effects =
+          {
+            {
+              type = "create-entity",
+              entity_name = "fire-flame"
+            }
+	  }
+          }
+        }
+}
+
+fireCapsule.animation =
+    {
+      filename = "__blahaj-plus__/graphics/fire-capsule.png",
+      draw_as_glow = true,
+      frame_count = 16,
+      line_length = 8,
+      animation_speed = 0.250,
+      width = 60,
+      height = 60,
+      shift = util.by_pixel(0.5, 0.5),
+      priority = "high",
+      scale = 0.5
+}
+fireBlahaj.name = "fire-blahaj"
+fireBlahaj.localised_name = "Fire BLÅHAJ"
+fireBlahaj.localised_description = "A legendary fire BLÅHAJ. Right click it to let it shoot a fire capsule."
+fireBlahaj.icon = "__blahaj-plus__/graphics/firehaj.png"
+fireBlahaj.icon_size = 512
+fireBlahaj.capsule_action =
+    {
+      type = "throw",
+      uses_stack = false,
+      attack_parameters =
+      {
+        type = "projectile",
+        activation_type = "throw",
+        ammo_category = "capsule",
+        cooldown = 30,
+        projectile_creation_distance = 0.6,
+        range = 25,
+        ammo_type =
+        {
+          target_type = "position",
+          action =
+          {
+            {
+              type = "direct",
+              action_delivery =
+              {
+                type = "projectile",
+                projectile = "fire-capsule",
+                starting_speed = 0.3
+              },
+	      {
+		      type = "damage",
+		      damage = {
+		      	amount = "50",
+			type = "physical"
+	     	      }
+	      }
+            },
+                  }
+                }
+              }
+            }
 local pinkRecipe = {
     type = "recipe",
     name = "pink-blahaj",
@@ -126,6 +200,38 @@ local essenceRecipe = {
     energy_required = 20,
     ingredients = { { type = "fluid", name = "water", amount = 50 } },
     results = { { type = "item", name = "essence-of-blahaj", amount = 1 } }
+}
+local fireRecipe = {
+	type = "recipe",
+	name = "fire-blahaj",
+	localised_name = "Fire BLÅHAJ",
+	enabled = false,
+	category = "advanced-crafting",
+	energy_required = 10,
+	ingredients = { 
+		{
+			type = "fluid",
+			name = "crude-oil",
+			amount = 50
+		},
+		{
+			type = "item", 
+			name = "essence-of-blahaj", 
+			amount = 20
+		},
+		{
+			type = "item",
+			name = "grenade",
+			amount = 10
+		}
+	},
+	results = {
+		{
+			type = "item",
+			name = "fire-blahaj",
+			amount = 1
+		}
+	}
 }
 local pinkBlahajTech = {
     type = "technology",
@@ -180,7 +286,10 @@ local specialTech = {
 	essential = false,
 	prerequisites = { "automation-2", "essence-of-blahaj", "pink-blahaj", "military-science-pack" },
 	effects = {
-
+		{
+			type = "unlock-recipe",
+			recipe = "fire-blahaj"
+		}
 	},
 	unit = {
 		count = 50,
@@ -188,4 +297,4 @@ local specialTech = {
 		time = 30
 	}
 }
-data:extend { pinkBlahaj, transBlahaj, essenceOfShork, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech }
+data:extend { fireCapsule, pinkBlahaj, transBlahaj, fireBlahaj, essenceOfShork, fireBlahaj, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, fireRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech }
