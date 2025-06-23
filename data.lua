@@ -45,8 +45,16 @@ local essenceOfShork = {
     icon = "__blahaj-plus__/graphics/essenceofshork.png",
     icon_size = 256,
     name = "essence-of-blahaj",
-    localised_name = "Essence of Shork",
-    localised_description = "Dust made out of lost BLÅHAJs. Maybe you can use it to reconstruct one?"
+    localised_name = "Essence of Shork"
+}
+local estrogen = {
+	type = "item",
+	stack_size = 100,
+	subgroup = "raw-resource"
+	icon = "__blahaj-plus__/graphics/estrogen.png",
+	icon_size = 256,
+	name = "estrogen",
+	localised_name = "Estrogen"
 }
 pinkBlahaj.localised_name = "Pink BLÅHAJ"
 pinkBlahaj.icon = "__blahaj-plus__/graphics/pinkblahaj.png"
