@@ -209,6 +209,27 @@ local essenceRecipe = {
     ingredients = { { type = "fluid", name = "water", amount = 50 } },
     results = { { type = "item", name = "essence-of-blahaj", amount = 1 } }
 }
+local estrogenRecipe = {
+	type = "recipe",
+	name = "estrogen",
+	localised_name = "Estrogen",
+	enabled = false,
+	energy_required = 3,
+	ingredients = {
+		{
+			type = "item",
+			name = "coal",
+			amount = 1
+		},
+		{
+			type = "item",
+			name = "essence-of-blahaj",
+			amount = 5
+		}
+	},
+	results = { { type = "item", name = "estrogen", amount = 1 }  }
+
+}
 local fireRecipe = {
 	type = "recipe",
 	name = "fire-blahaj",
@@ -292,11 +313,11 @@ local specialTech = {
 	icon = "__blahaj-plus__/graphics/specialblahaj.png",
 	icon_size = 512,
 	essential = false,
-	prerequisites = { "automation-2", "essence-of-blahaj", "pink-blahaj", "military-science-pack" },
+	prerequisites = { "automation-2", "essence-of-blahaj", "pink-blahaj", "military-science-pack", "basic-oil-processing" },
 	effects = {
 		{
 			type = "unlock-recipe",
-			recipe = "fire-blahaj"
+		 	recipe = "fire-blahaj"
 		}
 	},
 	unit = {
@@ -305,4 +326,4 @@ local specialTech = {
 		time = 30
 	}
 }
-data:extend { fireCapsule, pinkBlahaj, transBlahaj, fireBlahaj, essenceOfShork, fireBlahaj, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, fireRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech }
+data:extend { estrogen, fireCapsule, pinkBlahaj, transBlahaj, fireBlahaj, essenceOfShork, fireBlahaj, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, fireRecipe, estrogenRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech }

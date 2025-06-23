@@ -4,6 +4,7 @@ Date: 24. 06. 2025
   Major Features:
     - Added the Special BLÅHAJ technology.
     - Added the Fire BLÅHAJ.
+    - Added Estrogen.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 23. 06. 2025
