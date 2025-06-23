@@ -318,6 +318,10 @@ local specialTech = {
 		{
 			type = "unlock-recipe",
 		 	recipe = "fire-blahaj"
+		},
+		{
+			type = "unlock-recipe",
+			recipe = "estrogen"
 		}
 	},
 	unit = {
