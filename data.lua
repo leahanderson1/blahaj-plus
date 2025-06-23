@@ -50,7 +50,7 @@ local essenceOfShork = {
 local estrogen = {
 	type = "item",
 	stack_size = 100,
-	subgroup = "raw-resource"
+	subgroup = "raw-resource",
 	icon = "__blahaj-plus__/graphics/estrogen.png",
 	icon_size = 256,
 	name = "estrogen",
@@ -313,7 +313,7 @@ local specialTech = {
 	icon = "__blahaj-plus__/graphics/specialblahaj.png",
 	icon_size = 512,
 	essential = false,
-	prerequisites = { "automation-2", "essence-of-blahaj", "pink-blahaj", "military-science-pack", "basic-oil-processing" },
+	prerequisites = { "automation-2", "essence-of-blahaj", "pink-blahaj", "military-science-pack", "oil-processing" },
 	effects = {
 		{
 			type = "unlock-recipe",
