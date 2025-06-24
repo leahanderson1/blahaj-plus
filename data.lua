@@ -1,5 +1,14 @@
 local pinkBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
 local transBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
+local cyberBlahaj = {
+	type = "item",
+	name = "cyberhaj",
+	localised_name = "Cyberhaj",
+	localised_description = "The Cyberhaj. He fires bullets :3 also press space to activate him",
+	stack_size = 10,
+	icon = "__blahaj-plus__/graphics/cyberhaj.png",
+	icon_size = 512,
+}
 local fireCapsule = table.deepcopy(data.raw["projectile"]["slowdown-capsule"])
 local fireBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
 transBlahaj.localised_name = "Trans BLÅHAJ"
@@ -330,4 +339,4 @@ local specialTech = {
 		time = 30
 	}
 }
-data:extend { estrogen, fireCapsule, pinkBlahaj, transBlahaj, fireBlahaj, essenceOfShork, fireBlahaj, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, fireRecipe, estrogenRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech }
+data:extend { estrogen, fireCapsule, pinkBlahaj, transBlahaj, fireBlahaj, essenceOfShork, fireBlahaj, cyberBlahaj, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, fireRecipe, estrogenRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech }
