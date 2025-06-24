@@ -1,13 +1,67 @@
+require("laser")
 local pinkBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
 local transBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
 local cyberBlahaj = {
-	type = "item",
+	type = "gun",
 	name = "cyberhaj",
 	localised_name = "Cyberhaj",
 	localised_description = "The Cyberhaj. He fires bullets :3 also press space to activate him",
-	stack_size = 10,
 	icon = "__blahaj-plus__/graphics/cyberhaj.png",
 	icon_size = 512,
+	subgroup = "gun",
+	stack_size = 1,
+	attack_parameters = {
+      		type = "projectile",
+      		ammo_category = "beam",
+      		cooldown = 2,
+      		movement_slow_down_factor = 0.5,
+     		projectile_creation_distance = 1.125,
+      		range = 10,
+    	}
+}
+local electricAmmo = {
+    type = "ammo",
+    name = "electric-magazine",
+    localised_name = "Laser magazine",
+    icon = "__blahaj-plus__/graphics/electric-magazine.png",
+    subgroup = "ammo",
+    magazine_size = 30,
+    stack_size = 100,
+    order = "a[basic-clips]-d[electric-magazine]",
+    ammo_category = "beam",
+    pictures =
+    {
+      layers =
+      {
+        {
+          size = 64,
+          filename = "__blahaj-plus__/graphics/electric-magazine.png",
+          scale = 0.5,
+          mipmap_count = 4
+        },
+        {
+          draw_as_light = true,
+          size = 64,
+          filename = "__base__/graphics/icons/uranium-rounds-magazine-light.png",
+          scale = 0.5
+        }
+      }
+    },
+    ammo_type = {
+      action =
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "projectile",
+	  projectile = "laser-bullet-thing",
+	  starting_speed = 2,
+	  direction_deviation = 0,
+          range_deviation = 0,
+	  max_range = 10
+        }
+      }
+    }
 }
 local fireCapsule = table.deepcopy(data.raw["projectile"]["slowdown-capsule"])
 local fireBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
@@ -54,7 +108,7 @@ local essenceOfShork = {
     icon = "__blahaj-plus__/graphics/essenceofshork.png",
     icon_size = 256,
     name = "essence-of-blahaj",
-    localised_name = "Essence of Shork"
+    localised_name = "Essence of shork"
 }
 local estrogen = {
 	type = "item",
@@ -159,19 +213,12 @@ fireBlahaj.capsule_action =
                 type = "projectile",
                 projectile = "fire-capsule",
                 starting_speed = 0.3
-              },
-	      {
-		      type = "damage",
-		      damage = {
-		      	amount = "50",
-			type = "physical"
-	     	      }
-	      }
-            },
-                  }
-                }
               }
-            }
+	    }
+          },
+        }
+      }
+    }
 local pinkRecipe = {
     type = "recipe",
     name = "pink-blahaj",
@@ -271,6 +318,49 @@ local fireRecipe = {
 		}
 	}
 }
+local cyberRecipe = {
+    type = "recipe",
+    name = "cyberhaj",
+    localised_name = "Cyberhaj",
+    enabled = false,
+    energy_required = 10,
+    ingredients = {
+        { type = "item", name = "essence-of-blahaj", amount = 20 },
+	{ type = "item", name = "advanced-circuit", amount = 1 },
+	{ type = "item", name = "steel-plate", amount = 15 },
+	{ type = "item", name = "engine-unit", amount = 10 },
+	{ type = "item", name = "estrogen", amount = 5 }
+    },
+    results = { { type = "item", name = "cyberhaj", amount = 1 } }
+}
+local electricRecipe = {
+	type = "recipe",
+	name = "electric-ammo",
+	localised_name = "Laser rounds magazine",
+	enabled = false,
+	energy_required = 3,
+	ingredients = {
+		{ type = "item", name = "battery", amount = 5 },
+		{ type = "item", name = "steel-plate", amount = 1 },
+	},
+	results = { { type = "item", name = "electric-magazine", amount = 1 } }
+}
+local cyberTech = {
+	type = "technology",
+	localised_name = "Cyberhaj",
+	localised_description = "The Cyberhaj. He fires bullets :3",
+	name = "cyberhaj",
+	essential = false,
+	icon = "__blahaj-plus__/graphics/cyberhaj.png",
+	icon_size = 512,
+	effects = { { type = "unlock-recipe", recipe = "cyberhaj" }, { type = "unlock-recipe", recipe = "electric-ammo" } },
+	prerequisites = { "battery", "special-blahaj", "laser" },
+	unit = {
+		count = 50,
+		ingredients = { { "automation-science-pack", 1 }, { "logistic-science-pack", 1 }, { "military-science-pack", 1 }},
+		time = 30
+	}
+}
 local pinkBlahajTech = {
     type = "technology",
     localised_name = "Pink BLÅHAJ",
@@ -331,6 +421,10 @@ local specialTech = {
 		{
 			type = "unlock-recipe",
 			recipe = "estrogen"
+		},
+		{
+			type = "unlock-recipe",
+			recipe = "cyberhaj"
 		}
 	},
 	unit = {
@@ -339,4 +433,4 @@ local specialTech = {
 		time = 30
 	}
 }
-data:extend { estrogen, fireCapsule, pinkBlahaj, transBlahaj, fireBlahaj, essenceOfShork, fireBlahaj, cyberBlahaj, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, fireRecipe, estrogenRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech }
+data:extend { estrogen, electricAmmo, electricRecipe, fireCapsule, pinkBlahaj, transBlahaj, fireBlahaj, essenceOfShork, fireBlahaj, cyberBlahaj, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, fireRecipe, estrogenRecipe, cyberRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech, cyberTech }

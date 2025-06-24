@@ -5,6 +5,8 @@ Date: 24. 06. 2025
     - Added the Special BLÅHAJ technology.
     - Added the Fire BLÅHAJ.
     - Added Estrogen.
+    - Added the Cyberhaj, a powerful weapon that shoots lasers.
+    - Added laser magazines.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 23. 06. 2025
