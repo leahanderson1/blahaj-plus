@@ -1,6 +1,16 @@
 require("laser")
 local pinkBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
 local transBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
+local space = {
+	type = "item",
+	name = "spacecore",
+	localised_name = "Space core",
+	--fatass
+	stack_size = 1,
+	icon = "__blahaj-plus__/graphics/space.png",
+	icon_size = 256
+
+}
 local cyberBlahaj = {
 	type = "gun",
 	name = "cyberhaj",
@@ -434,4 +444,4 @@ local specialTech = {
 		time = 30
 	}
 }
-data:extend { estrogen, electricAmmo, electricRecipe, fireCapsule, pinkBlahaj, transBlahaj, fireBlahaj, essenceOfShork, fireBlahaj, cyberBlahaj, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, fireRecipe, estrogenRecipe, cyberRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech, cyberTech }
+data:extend { space, estrogen, electricAmmo, electricRecipe, fireCapsule, pinkBlahaj, transBlahaj, fireBlahaj, essenceOfShork, fireBlahaj, cyberBlahaj, pinkRecipe, transRecipe, essenceRecipe, blahajRecipe, fireRecipe, estrogenRecipe, cyberRecipe, pinkBlahajTech, transBlahajTech, essenceTech, specialTech, cyberTech }
