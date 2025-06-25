@@ -13,10 +13,10 @@ local cyberBlahaj = {
 	attack_parameters = {
       		type = "projectile",
       		ammo_category = "beam",
-      		cooldown = 2,
+      		cooldown = 1.25,
       		movement_slow_down_factor = 0.5,
      		projectile_creation_distance = 1.125,
-      		range = 10,
+      		range = 20,
     	}
 }
 local electricAmmo = {
@@ -51,6 +51,7 @@ local electricAmmo = {
       action =
       {
         type = "direct",
+	repeat_count = 10,
         action_delivery =
         {
           type = "projectile",
@@ -58,7 +59,7 @@ local electricAmmo = {
 	  starting_speed = 2,
 	  direction_deviation = 0,
           range_deviation = 0,
-	  max_range = 10
+	  max_range = 20
         }
       }
     }

@@ -16,7 +16,7 @@ local laser = {
                {
                   type = "damage",
                   damage = {amount = 2, type = "laser"}
-               }
+               } 
             }
          }
       	},
