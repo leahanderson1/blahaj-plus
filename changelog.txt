@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 24. 06. 2025
+  Minor Features:
+    - Balanced out the Cyberhaj to be much more fun to use.
+  Bugfixes:
+    - Made the laser coming out of the Cyberhaj more visible.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 24. 06. 2025
   Major Features:
