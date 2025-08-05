@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4:
+Date: 05. 08. 2025
+  Notes:
+    - by the way, sorry for so many new updates. I recently decided to do a
+    full entire playthough with this mod, and I noticed that stuff needed to
+    be rebalanced. I promise this is the last update for a little bit. :)
+  Minor Features:
+    - Reduced time to make Essence of Blahaj by 25%.
+    - The pink blahaj now takes 5 blahajs, instead of 25.
+    - Blahajs collected from the sea now only give 1 blahaj. This balances crafting blahajs with essence significantly more.
+  Major Features:
+    - Completely removed dependency on the BLAHAJ mod due to it somehow breaking compatibility with this mod BY RENAMING A FILE
+---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 05. 08. 2025
+  Bugfixes:
+    - Removed Cyberhaj recipe from the "Special BLAHAJ" research.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 24. 06. 2025
   Minor Features:

@@ -1,9 +1,9 @@
 {
 	"name": "blahaj-plus",
-	"version": "0.2.2",
+	"version": "0.2.4",
 	"title": "BLÅHAJ+",
 	"author": "Leah Anderson",
 	"factorio_version": "2.0",
-	"dependencies": ["base >= 2.0", "blahaj = 0.3.0"],
+	"dependencies": ["base >= 2.0", "! blahaj"],
 	"description": "This mod adds on to ading2210's blahaj mod by adding more types of sharks and ways to mass-produce them."
 }

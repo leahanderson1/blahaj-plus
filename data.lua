@@ -1,3 +1,62 @@
+data.raw["capsule"]["raw-fish"].localised_name = "BLÅHAJ"
+data.raw["capsule"]["raw-fish"].localised_description = "A cute BLÅHAJ. Right click to cuddle with it and gain some health."
+
+data.raw["capsule"]["raw-fish"].icon = "__blahaj-plus__/graphics/blahaj/blahaj_full.png"
+data.raw["capsule"]["raw-fish"].icon_size = 512
+data.raw["capsule"]["raw-fish"].capsule_action = {
+  type = "use-on-self",
+  uses_stack = false,
+  attack_parameters = {
+    type = "projectile",
+    ammo_category = "biological",
+    activation_type = "activate",
+    range = 0,
+    cooldown = 120,
+    ammo_type = {
+      category = "capsule",
+      target_type = "position",
+      action = {
+        type = "direct",
+        action_delivery = {
+          type = "instant",
+          target_effects = {
+            {
+              type = "damage",
+              damage = {
+                amount = -20,
+                type = "physical"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+-- do not spoil the blahaj
+data.raw["capsule"]["raw-fish"].spoil_result = nil
+data.raw["capsule"]["raw-fish"].spoil_ticks = nil
+
+-- change fish entity name and graphics
+data.raw["fish"]["fish"].localised_name = "BLÅHAJ"
+data.raw["fish"]["fish"].icon = "__blahaj-plus__/graphics/blahaj/blahaj_full.png"
+data.raw["fish"]["fish"].icon_size = 512
+data.raw["fish"]["fish"].pictures = {
+  {
+    filename = "__blahaj-plus__/graphics/blahaj/blahaj_entity.png",
+    priority = "extra-high",
+    width = 32,
+    height = 32
+  },
+  { -- some mods expect there to be two fish images
+    filename = "__blahaj-plus__/graphics/blahaj/blahaj_entity.png",
+    priority = "extra-high",
+    width = 32,
+    height = 32
+  }
+}
+data.raw["fish"]["fish"].minable.count = 1
 require("laser")
 local pinkBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
 local transBlahaj = table.deepcopy(data.raw["capsule"]["raw-fish"])
@@ -90,7 +149,7 @@ transBlahaj.capsule_action = {
         ammo_category = "biological",
         activation_type = "activate",
         range = 0,
-        cooldown = 180,
+        cooldown = 120,
         ammo_type = {
             category = "capsule",
             target_type = "position",
@@ -237,7 +296,7 @@ local pinkRecipe = {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        { type = "item", name = "raw-fish", amount = 25 }
+        { type = "item", name = "raw-fish", amount = 5 }
     },
     results = { { type = "item", name = "pink-blahaj", amount = 1 } }
 }
@@ -249,7 +308,7 @@ local transRecipe = {
 	enabled = false,
 	energy_required = 8,
 	ingredients = {
-		{ type = "item", name = "pink-blahaj", amount = 50 },
+		{ type = "item", name = "pink-blahaj", amount = 30 },
 		{ type = "item", name = "essence-of-blahaj", amount = 20 }
 	},
 	results = { { type = "item", name = "trans-blahaj", amount = 1 } } 
@@ -272,7 +331,7 @@ local essenceRecipe = {
     enabled = false,
     category = "advanced-crafting",
     name = "essence-of-blahaj",
-    energy_required = 20,
+    energy_required = 15,
     ingredients = { { type = "fluid", name = "water", amount = 50 } },
     results = { { type = "item", name = "essence-of-blahaj", amount = 1 } }
 }
@@ -336,7 +395,7 @@ local cyberRecipe = {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        { type = "item", name = "essence-of-blahaj", amount = 20 },
+        { type = "item", name = "pink-blahaj", amount = 20 },
 	{ type = "item", name = "advanced-circuit", amount = 1 },
 	{ type = "item", name = "steel-plate", amount = 15 },
 	{ type = "item", name = "engine-unit", amount = 10 },
@@ -432,10 +491,6 @@ local specialTech = {
 		{
 			type = "unlock-recipe",
 			recipe = "estrogen"
-		},
-		{
-			type = "unlock-recipe",
-			recipe = "cyberhaj"
 		}
 	},
 	unit = {
