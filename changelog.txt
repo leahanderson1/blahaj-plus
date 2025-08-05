@@ -2,9 +2,7 @@
 Version: 0.2.4:
 Date: 05. 08. 2025
   Notes:
-    - by the way, sorry for so many new updates. I recently decided to do a
-    full entire playthough with this mod, and I noticed that stuff needed to
-    be rebalanced. I promise this is the last update for a little bit. :)
+    - by the way, sorry for so many new updates. I recently decided to do a full entire playthough with this mod, and I noticed that stuff needed to be rebalanced. I promise this is the last update for a little bit. :)
   Minor Features:
     - Reduced time to make Essence of Blahaj by 25%.
     - The pink blahaj now takes 5 blahajs, instead of 25.
