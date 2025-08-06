@@ -1,19 +1,29 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.2.4:
+Version: 0.2.5
+Date: 06. 08. 2025
+  Bugfixes:
+    - Made the formatting of the name of Essence of Shork more consistent.
+  Minor Features:
+    - Changed the Essence of Shork technology description to be more like other vanilla descriptions.
+  Nitpicks:
+    - Flipped all of the BLÅHAJ sprites to be facing the same direction.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.4
 Date: 05. 08. 2025
   Notes:
     - by the way, sorry for so many new updates. I recently decided to do a full entire playthough with this mod, and I noticed that stuff needed to be rebalanced. I promise this is the last update for a little bit. :)
   Minor Features:
-    - Reduced time to make Essence of Blahaj by 25%.
-    - The pink blahaj now takes 5 blahajs, instead of 25.
-    - Blahajs collected from the sea now only give 1 blahaj. This balances crafting blahajs with essence significantly more.
+    - Reduced time to make Essence of Shork by 25%.
+    - The pink BLÅHAJ recipe now requires 5 BLÅHAJs, instead of 25.
+    - BLÅHAJs collected from the sea now only give 1 BLÅHAJ. This balances crafting BLÅHAJs with essence significantly.
+    - Added compatibility with the Reverse Factory mod.
   Major Features:
-    - Completely removed dependency on the BLAHAJ mod due to it somehow breaking compatibility with this mod BY RENAMING A FILE
+    - Completely removed dependency on the BLÅHAJ mod due to it somehow breaking compatibility with this mod BY RENAMING A FILE
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 05. 08. 2025
   Bugfixes:
-    - Removed Cyberhaj recipe from the "Special BLAHAJ" research.
+    - Removed Cyberhaj recipe from the "Special BLÅHAJ." research.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 24. 06. 2025
@@ -40,3 +50,4 @@ Version: 0.1.0
 Date: 22. 06. 2025
   Major Features:
     - Initial release
+    - Added the Pink and Trans BLÅHAJs.

@@ -74,7 +74,7 @@ local cyberBlahaj = {
 	type = "gun",
 	name = "cyberhaj",
 	localised_name = "Cyberhaj",
-	localised_description = "The Cyberhaj. He fires bullets :3 also press space to activate him",
+	localised_description = "The Cyberhaj. He fires bullets :3",
 	icon = "__blahaj-plus__/graphics/cyberhaj.png",
 	icon_size = 512,
 	subgroup = "gun",
@@ -178,7 +178,7 @@ local essenceOfShork = {
     icon = "__blahaj-plus__/graphics/essenceofshork.png",
     icon_size = 256,
     name = "essence-of-blahaj",
-    localised_name = "Essence of shork"
+    localised_name = "Essence of Shork"
 }
 local estrogen = {
 	type = "item",
@@ -237,12 +237,11 @@ fireCapsule.action = {
               entity_name = "fire-flame"
             }
 	  }
-          }
-        }
+         }
+       }
 }
 
-fireCapsule.animation =
-    {
+fireCapsule.animation = {
       filename = "__blahaj-plus__/graphics/fire-capsule.png",
       draw_as_glow = true,
       frame_count = 16,
@@ -259,8 +258,7 @@ fireBlahaj.localised_name = "Fire BLÅHAJ"
 fireBlahaj.localised_description = "A legendary fire BLÅHAJ. Right click it to let it shoot a fire capsule."
 fireBlahaj.icon = "__blahaj-plus__/graphics/firehaj.png"
 fireBlahaj.icon_size = 512
-fireBlahaj.capsule_action =
-    {
+fireBlahaj.capsule_action = {
       type = "throw",
       uses_stack = false,
       attack_parameters =
@@ -461,7 +459,7 @@ local transBlahajTech = {
 local essenceTech = {
     type = "technology",
     localised_name = "Essence of Shork",
-    localised_description = "Dust made out of lost BLÅHAJs. Maybe you can use it to reconstruct one?",
+    localised_description = "Allows you to filter BLÅHAJ dust from water.",
     name = "essence-of-blahaj",
     icon_size = 256,
     icon = "__blahaj-plus__/graphics/essenceofshork.png",
