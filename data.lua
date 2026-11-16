@@ -327,7 +327,7 @@ local essenceRecipe = {
     type = "recipe",
     localised_name = "Essence of Shork",
     enabled = false,
-    category = "advanced-crafting",
+    categories = {"advanced-crafting"},
     name = "essence-of-blahaj",
     energy_required = 15,
     ingredients = { { type = "fluid", name = "water", amount = 50 } },
@@ -359,7 +359,7 @@ local fireRecipe = {
 	name = "fire-blahaj",
 	localised_name = "Fire BLÅHAJ",
 	enabled = false,
-	category = "advanced-crafting",
+	categories = {"advanced-crafting"},
 	energy_required = 10,
 	ingredients = { 
 		{
@@ -438,7 +438,7 @@ local pinkBlahajTech = {
     icon_size = 512,
     icon = "__blahaj-plus__/graphics/pinkblahaj.png",
     effects = { { type = "unlock-recipe", recipe = "pink-blahaj" } },
-    research_trigger = { type = "mine-entity", entity = "fish" }
+    research_trigger = { type = "mine-entity", entities = {"fish"} }
 }
 local transBlahajTech = {
 	type = "technology",
